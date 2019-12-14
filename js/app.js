@@ -2,7 +2,7 @@ const baseUrl = 'https://api.themoviedb.org/3/';
 const apikey = '192cb33f8d99845918e132ae97c45c09';
 const api1 = `${baseUrl}discover/movie?api_key=${apikey}&with_keywords=207317&page=`;
 //= =====================================================================================
-//   api1 - endpoint med christmas/holiday search viser alle posters - Dannie
+//   api1 - Dannie - endpoint med christmas/holiday search viser alle posters
 //= =====================================================================================
 fetch(api1)
   .then(res => res.json())
@@ -14,7 +14,7 @@ fetch(api1)
       const posterPath = movie.poster_path;
       const poster = `<img src="https://image.tmdb.org/t/p/w300/${posterPath}"></img>`;
       //= =====================================================================================
-      //   laver en div til poster - Mikkel
+      //  Mikkel - laver en div til poster
       //= =====================================================================================
       const posterDiv = document.createElement('div');
       posterDiv.id = 'poster';
