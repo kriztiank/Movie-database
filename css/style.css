@@ -1,0 +1,23 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+#posterSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  grid-gap: 1px;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-self: center;
+  cursor: pointer;
+}
+
+#posterSection :hover {
+  transition: 200ms ease-in;
+  opacity: 0.5;
+}
