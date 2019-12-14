@@ -1,32 +1,35 @@
 const baseUrl = 'https://api.themoviedb.org/3/';
 const apikey = '192cb33f8d99845918e132ae97c45c09';
 const api1 = `${baseUrl}discover/movie?api_key=${apikey}&with_keywords=207317&page=`;
-
-// api1 endpoint with christmas/holiday search
+//= =====================================================================================
+//   api1 - endpoint med christmas/holiday search viser alle posters - Dannie
+//= =====================================================================================
 fetch(api1)
   .then(res => res.json())
   .then(data1 => {
     // console.log(data1);
     data1.results.forEach(movie => {
-      // alt data fra baseUrl og api1 gemmes i et forEach loop og kan nu hentes via et movie object "console.log(movie.id);"
-      // kobler billede sti sammen med TMDB image endpoint
+      // alt data fra api1 gemmes i et forEach loop og kan nu tilgås via et movie object "console.log(movie.id);"
+      // kobler billede sti sammen med TMDB image endpoint https://image.tmdb.org/t/p/w300/
       const posterPath = movie.poster_path;
       const poster = `<img src="https://image.tmdb.org/t/p/w300/${posterPath}"></img>`;
       //= =====================================================================================
-      //   laver en div til poster
+      //   laver en div til poster - Mikkel
       //= =====================================================================================
       const posterDiv = document.createElement('div');
       posterDiv.id = 'poster';
       posterDiv.innerHTML = poster;
       document.getElementById('posterSection').appendChild(posterDiv);
-      // lytter efter clickevent på posterDiv og rydder samtidig indhold i movieInfo elementet
+      //= =====================================================================================
+      //   lytter efter clickevent på posterDiv og rydder samtidig indhold i movieInfo elementet
+      //= =====================================================================================
       posterDiv.addEventListener('click', function() {
-        document.getElementById('movieInfo').innerHTML = ' ';
-        //= =====================================================================================
-        // api2 - addEventListener lytter på klik og tager den movie der bliver klikket på og kobler den på api2 &append_to_response=videos
-        //= =====================================================================================
-        const getMovie = movie.id;
-        const api2 = `${baseUrl}movie/${getMovie}?api_key=${apikey}&append_to_response=videos`;
+      document.getElementById('movieInfo').innerHTML = ' ';
+      //= =====================================================================================
+      // api2 - addEventListener lytter på klik og tager den movie der bliver klikket på og kobler den på api2 med getMovie variablen
+      //= =====================================================================================
+       const getMovie = movie.id;
+       const api2 = `${baseUrl}movie/${getMovie}?api_key=${apikey}&append_to_response=videos`;
 
         fetch(api2)
           .then(res => res.json())
@@ -72,7 +75,9 @@ fetch(api1)
             runtimeDiv.innerHTML = getRuntime;
             document.getElementById('movieInfo').appendChild(runtimeDiv);
           });
-        // api3
+            //= =====================================================================================
+            //  api3 - Kristian - getPersons variablen tager den film der bliver klikket på og kobler den på api3 som linker til cast og crew 
+            //= =====================================================================================
         const getPersons = movie.id;
         const api3 = `${baseUrl}movie/${getPersons}/credits?api_key=${apikey}`;
         // console.log(api3);
