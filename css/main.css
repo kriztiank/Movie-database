@@ -53,6 +53,12 @@ body {
   display: inline;
 }
 
+.pageSwitch {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  text-align: center;
+}
+
 /*********************************************
 modal
 **********************************************/
