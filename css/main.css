@@ -1,8 +1,6 @@
-/* No CSS */
-html {
-  scroll-behavior: smooth;
-}
-
+/*********************************************
+Base Styles
+**********************************************/
 body {
   width: 1200px auto;
   font-family: 'Open Sans', sans-serif;
@@ -48,6 +46,10 @@ body {
   -webkit-transition: 200ms ease-in;
   transition: 200ms ease-in;
   opacity: 0.5;
+}
+
+#pagenumber {
+  display: inline;
 }
 
 /*********************************************
