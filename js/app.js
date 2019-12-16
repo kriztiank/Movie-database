@@ -67,10 +67,6 @@ function getapi() {
               const iframe = `<iframe width="400vh" height="300vh"
               src="https://www.youtube.com/embed/${trailerId}?rel=0" allowfullscreen=""></iframe>`;
               // output
-              let trailerDiv = document.createElement('div');
-              trailerDiv.className = 'trailer';
-              trailerDiv.innerHTML = iframe;
-              // output
               const outputTrailer = `<div class="trailer">${iframe}</div> `;
               document.getElementById('trailer').innerHTML = outputTrailer;
               //= =====================================================================================
