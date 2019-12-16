@@ -36,6 +36,8 @@ function getapi() {
         // lytter efter clickevent på posterDiv og åbner modal
         posterDiv.addEventListener('click', function() {
           document.querySelector('.modal-bg').style.display = 'flex';
+          
+          
           //= =====================================================================================
           // api2 - addEventListener lytter på klik,
           // den tager den movie der bliver klikket på og kobler den på api2 med getMovie variablen.
