@@ -64,7 +64,7 @@ function getapi() {
               //= =====================================================================================
               // data
               const trailerId = data2.videos.results[0].key;
-              const iframe = `<iframe width="560" height="340"
+              const iframe = `<iframe width="400vh" height="300vh"
               src="https://www.youtube.com/embed/${trailerId}?rel=0" allowfullscreen=""></iframe>`;
               // output
               let trailerDiv = document.createElement('div');
