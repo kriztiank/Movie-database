@@ -1,8 +1,6 @@
-/* No CSS */ /*# sourceMappingURL=style.css.map */
-html {
-  scroll-behavior: smooth;
-}
-
+/*********************************************
+Base Styles
+**********************************************/
 body {
   // margin: 0;
   width: 1200px auto;
@@ -37,6 +35,9 @@ body {
 #poster :hover {
   transition: 200ms ease-in;
   opacity: 0.5;
+}
+#pagenumber{
+display: inline;
 }
 
 /*********************************************
