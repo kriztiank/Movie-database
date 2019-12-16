@@ -36,6 +36,14 @@ function getapi() {
         // lytter efter clickevent på posterDiv og åbner modal
         posterDiv.addEventListener('click', function() {
           document.querySelector('.modal-bg').style.display = 'flex';
+          document.getElementById("title").innerHTML = " ";
+          document.getElementById("description").innerHTML = " ";
+          document.getElementById("trailer").innerHTML = " ";
+          document.getElementById("year").innerHTML = " ";
+          document.getElementById("runtime").innerHTML = " ";
+          document.getElementById("directors").innerHTML = " ";
+          document.getElementById("producers").innerHTML = " ";
+          document.getElementById("actors").innerHTML = " ";
           
           
           //= =====================================================================================
@@ -93,7 +101,7 @@ function getapi() {
               //  api3 som har en sti til cast og crew.
               //= =====================================================================================
             });
-        });
+        
         const getPersons = movie.id;
         const api3 = `${baseUrl}movie/${getPersons}/credits?api_key=${apikey}`;
         fetch(api3)
@@ -147,6 +155,7 @@ function getapi() {
           }
         }
         window.addEventListener('click', outsideClick);
+      });
       });
     });
 }
