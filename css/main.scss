@@ -24,7 +24,7 @@ body {
   grid-template-rows: repeat(auto);
   grid-gap: 20px;
   background-color: #262020;
-  padding: 5px;
+  padding: 20px;
 }
 * img {
   display: block;
@@ -47,6 +47,14 @@ display: inline;
     grid-column: 3;
     text-align: center;
 }
+#btn {
+    /* Default button styles removed */
+    all: unset;
+    padding: 1px 1px;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
 
 /*********************************************
 modal
