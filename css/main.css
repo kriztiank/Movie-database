@@ -44,7 +44,8 @@ body {
   cursor: pointer;
 }
 
-.pagenumbertop, .pagenumberbotton {
+.pagenumbertop,
+.pagenumberbotton {
   display: inline;
 }
 
@@ -54,7 +55,10 @@ body {
   text-align: center;
 }
 
-#btn {
+#pageDownTop,
+#pageUpTop,
+#pageDownBotton,
+#pageUpBotton {
   /* Default button styles removed */
   all: unset;
   padding: 1px 1px;
