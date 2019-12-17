@@ -139,4 +139,19 @@ modal
 .modal-bg .modal-content .close:hover {
   color: #666;
 }
+
+@media only screen and (max-width: 800px) {
+  #posterSection {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #posterSection {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    padding: 10px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
