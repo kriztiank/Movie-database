@@ -100,6 +100,8 @@ modal
           animation-name: modalopen;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .modal-bg .modal-content #description {
