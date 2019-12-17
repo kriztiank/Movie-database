@@ -10,7 +10,8 @@ function getapi() {
   //   api1 - Dannie - endpoint med christmas/holiday search viser alle posters.
   //= =====================================================================================
   let api1 = `${baseUrl}discover/movie?api_key=${apikey}&with_keywords=207317&page=${pagenumber}`;
-  document.getElementById('pagenumber').innerHTML = 'Page: ' + pagenumber;
+  document.querySelector('.pagenumbertop').innerHTML = 'Page: ' + pagenumber;
+  document.querySelector('.pagenumberbotton').innerHTML = 'Page: ' + pagenumber;
   fetch(api1)
     .then(res => res.json())
 
@@ -167,7 +168,8 @@ function nextpage() {
   } else {
     pagenumber = pagenumber + 1;
     document.getElementById('posterSection').innerHTML = ' ';
-    document.getElementById('pagenumber').innerHTML = pagenumber;
+    document.querySelector('.pagenumbertop').innerHTML = pagenumber;
+    document.querySelector('.pagenumberbotton').innerHTML = pagenumber;
     getapi();
   }
 }
