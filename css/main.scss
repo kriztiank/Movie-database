@@ -11,13 +11,18 @@ body {
 
 #container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 10%  1fr 10%;
   grid-template-rows: repeat(1fr);
   grid-gap: 5px;
+  * img {
+    display: block;
+    line-height: 0;
+    max-width: 100%;
+  }
 }
 
 #posterSection {
-  grid-column: 3;
+  grid-column: 2;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: repeat(auto);
@@ -25,10 +30,7 @@ body {
   background-color: #262020;
   padding: 20px;
 }
-* img {
-  display: block;
-  line-height: 0;
-}
+
 #poster :hover {
   transition: 250ms ease-in;
   opacity: 0.5;
@@ -40,7 +42,7 @@ body {
 }
 
 .pageSwitch {
-  grid-column: 3;
+  grid-column: 2;
   text-align: center;
 }
 #pageDownTop,
