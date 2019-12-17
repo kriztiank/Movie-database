@@ -38,23 +38,22 @@ body {
   transition: 200ms ease-in;
   opacity: 0.5;
 }
-#pagenumber{
-display: inline;
+.pagenumbertop, .pagenumberbotton {
+  display: inline;
 }
 
-
-.pageSwitch{
-    grid-column: 3;
-    text-align: center;
+.pageSwitch {
+  grid-column: 3;
+  text-align: center;
 }
 #btn {
-    /* Default button styles removed */
-    all: unset;
-    padding: 1px 1px;
-    text-decoration: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
+  /* Default button styles removed */
+  all: unset;
+  padding: 1px 1px;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 /*********************************************
 modal
@@ -68,7 +67,6 @@ modal
   display: none;
   justify-content: center;
   align-items: center;
-  
 
   .modal-content {
     width: 90vh;
@@ -84,8 +82,8 @@ modal
     overflow-y: auto;
     overflow-x: hidden;
 
-    #description{
-        font-size: 1vw;
+    #description {
+      font-size: 1vw;
     }
     @keyframes modalopen {
       from {
