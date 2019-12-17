@@ -68,6 +68,7 @@ modal
   display: none;
   justify-content: center;
   align-items: center;
+  
 
   .modal-content {
     width: 90vh;
@@ -80,6 +81,8 @@ modal
     position: relative;
     animation-name: modalopen;
     animation-duration: 1s;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     #description{
         font-size: 1vw;
