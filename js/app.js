@@ -3,8 +3,6 @@ let apikey = 'cfbea9bfcd87f90b5271f8e73970e168';
 // let key = '192cb33f8d99845918e132ae97c45c09';
 let pagenumber = 1;
 
-
-
 function getapi() {
   //= =====================================================================================
   //   api1 - Dannie - endpoint med christmas/holiday search viser alle posters.
@@ -37,16 +35,15 @@ function getapi() {
         // lytter efter clickevent på posterDiv og åbner modal
         posterDiv.addEventListener('click', function() {
           document.querySelector('.modal-bg').style.display = 'flex';
-          document.getElementById("title").innerHTML = " ";
-          document.getElementById("description").innerHTML = " ";
-          document.getElementById("trailer").innerHTML = " ";
-          document.getElementById("year").innerHTML = " ";
-          document.getElementById("runtime").innerHTML = " ";
-          document.getElementById("directors").innerHTML = " ";
-          document.getElementById("producers").innerHTML = " ";
-          document.getElementById("actors").innerHTML = " ";
-          
-          
+          document.getElementById('title').innerHTML = ' ';
+          document.getElementById('description').innerHTML = ' ';
+          document.getElementById('trailer').innerHTML = ' ';
+          document.getElementById('year').innerHTML = ' ';
+          document.getElementById('runtime').innerHTML = ' ';
+          document.getElementById('directors').innerHTML = ' ';
+          document.getElementById('producers').innerHTML = ' ';
+          document.getElementById('actors').innerHTML = ' ';
+
           //= =====================================================================================
           // api2 - addEventListener lytter på klik,
           // den tager den movie der bliver klikket på og kobler den på api2 med getMovie variablen.
@@ -98,61 +95,65 @@ function getapi() {
               //  api3 som har en sti til cast og crew.
               //= =====================================================================================
             });
-        
-        const getPersons = movie.id;
-        const api3 = `${baseUrl}movie/${getPersons}/credits?api_key=${apikey}`;
-        fetch(api3)
-          .then(res => res.json())
-          .then(data3 => {
-            const getDirectors = [];
-            data3.crew.forEach(function(entry) {
-              if (entry.job === 'Director') {
-                getDirectors.push(entry.name);
-                const outputDirectors = `<p class="directors"><b>Directors:</b> ${getDirectors.join(
-                  ', '
-                )}</p> `;
-                document.getElementById(
-                  'directors'
-                ).innerHTML = outputDirectors;
-              }
-            });
-            const getProducers = [];
-            data3.crew.forEach(function(entry) {
-              if (entry.job === 'Producer') {
-                getProducers.push(entry.name);
-                const outputProducers = `<p class="producers"><b>Producers:</b> ${getProducers.join(
-                  ', '
-                )}</p> `;
-                document.getElementById(
-                  'producers'
-                ).innerHTML = outputProducers;
-              }
-            });
-            const items = data3.cast; // data3.cast is the entrypoint api3
-            // .map can get extract by key name, fx .name gets all the actor names, .character gets the role name
-            const getCastMemberNames = items.map(castMember => castMember.name);
-            const getFirstTwo = getCastMemberNames.slice(0, 2);
-            // Create p element and class name
-            const getActors = getFirstTwo;
-            const outputActors = `<p class="actors"><b>Actors:</b> ${getActors.join(
-              ', '
-            )}</p> `;
-            document.getElementById('actors').innerHTML = outputActors;
-          });
-        // klik event der lukker modal
-        document.querySelector('.close').addEventListener('click', function() {
-          document.querySelector('.modal-bg').style.display = 'none';
-        });
-        // klik event der lukker modal hvis der klikkes udenfor
-        const modal = document.querySelector('.modal-bg');
 
-        function outsideClick(e) {
-          if (e.target === modal) {
-            modal.style.display = 'none';
+          const getPersons = movie.id;
+          const api3 = `${baseUrl}movie/${getPersons}/credits?api_key=${apikey}`;
+          fetch(api3)
+            .then(res => res.json())
+            .then(data3 => {
+              const getDirectors = [];
+              data3.crew.forEach(function(entry) {
+                if (entry.job === 'Director') {
+                  getDirectors.push(entry.name);
+                  const outputDirectors = `<p class="directors"><b>Directors:</b> ${getDirectors.join(
+                    ', '
+                  )}</p> `;
+                  document.getElementById(
+                    'directors'
+                  ).innerHTML = outputDirectors;
+                }
+              });
+              const getProducers = [];
+              data3.crew.forEach(function(entry) {
+                if (entry.job === 'Producer') {
+                  getProducers.push(entry.name);
+                  const outputProducers = `<p class="producers"><b>Producers:</b> ${getProducers.join(
+                    ', '
+                  )}</p> `;
+                  document.getElementById(
+                    'producers'
+                  ).innerHTML = outputProducers;
+                }
+              });
+              const items = data3.cast; // data3.cast is the entrypoint api3
+              // .map can get extract by key name, fx .name gets all the actor names, .character gets the role name
+              const getCastMemberNames = items.map(
+                castMember => castMember.name
+              );
+              const getFirstTwo = getCastMemberNames.slice(0, 2);
+              // Create p element and class name
+              const getActors = getFirstTwo;
+              const outputActors = `<p class="actors"><b>Actors:</b> ${getActors.join(
+                ', '
+              )}</p> `;
+              document.getElementById('actors').innerHTML = outputActors;
+            });
+          // klik event der lukker modal
+          document
+            .querySelector('.close')
+            .addEventListener('click', function() {
+              document.querySelector('.modal-bg').style.display = 'none';
+            });
+          // klik event der lukker modal hvis der klikkes udenfor
+          const modal = document.querySelector('.modal-bg');
+
+          function outsideClick(e) {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+            }
           }
-        }
-        window.addEventListener('click', outsideClick);
-      });
+          window.addEventListener('click', outsideClick);
+        });
       });
     });
 }
@@ -161,19 +162,17 @@ function getapi() {
 //======================================================================================
 getapi();
 //======================================================================================
-// mikkel - end onclick funtion der kan skifte side
+// mikkel - sætter en eventlistener alle knapperne så man kan skiftte side
 //======================================================================================
-document.getElementById("lastpage").addEventListener('click', function() {
-console.log('hey');
-if (pagenumber <= 1) {
-    } else {
-      pagenumber = pagenumber - 1;
-      document.getElementById('posterSection').innerHTML = ' ';
-      getapi();
-    }
-
+document.getElementById('pageDownTop').addEventListener('click', function() {
+  if (pagenumber <= 1) {
+  } else {
+    pagenumber = pagenumber - 1;
+    document.getElementById('posterSection').innerHTML = ' ';
+    getapi();
+  }
 })
-function nextpage() {
+document.getElementById('pageUpTop').addEventListener('click', function() {
   if (pagenumber >= 66) {
   } else {
     pagenumber = pagenumber + 1;
@@ -182,12 +181,22 @@ function nextpage() {
     document.querySelector('.pagenumberbotton').innerHTML = pagenumber;
     getapi();
   }
-}
-// function lastpage() {
-//   if (pagenumber <= 1) {
-//   } else {
-//     pagenumber = pagenumber - 1;
-//     document.getElementById('posterSection').innerHTML = ' ';
-//     getapi();
-//   }
-// }
+})
+document.getElementById('pageDownBotton').addEventListener('click', function() {
+  if (pagenumber <= 1) {
+  } else {
+    pagenumber = pagenumber - 1;
+    document.getElementById('posterSection').innerHTML = ' ';
+    getapi();
+  }
+})
+document.getElementById('pageUpBotton').addEventListener('click', function() {
+  if (pagenumber >= 66) {
+  } else {
+    pagenumber = pagenumber + 1;
+    document.getElementById('posterSection').innerHTML = ' ';
+    document.querySelector('.pagenumbertop').innerHTML = pagenumber;
+    document.querySelector('.pagenumberbotton').innerHTML = pagenumber;
+    getapi();
+  }
+})
