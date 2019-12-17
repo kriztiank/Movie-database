@@ -37,16 +37,11 @@ body {
   line-height: 0;
 }
 
-#poster {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  cursor: pointer;
-}
-
 #poster :hover {
-  -webkit-transition: 200ms ease-in;
-  transition: 200ms ease-in;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .pagenumbertop, .pagenumberbotton {

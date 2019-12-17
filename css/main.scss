@@ -5,6 +5,7 @@ Base Styles
 **********************************************/
 body {
   // margin: 0;
+  // padding: 0;
   width: 1200px auto;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
@@ -30,13 +31,10 @@ body {
   display: block;
   line-height: 0;
 }
-#poster {
-  justify-self: center;
-  cursor: pointer;
-}
 #poster :hover {
-  transition: 200ms ease-in;
+  transition: 250ms ease-in;
   opacity: 0.5;
+  cursor: pointer;
 }
 .pagenumbertop, .pagenumberbotton {
   display: inline;

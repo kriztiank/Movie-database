@@ -163,6 +163,16 @@ getapi();
 //======================================================================================
 // mikkel - end onclick funtion der kan skifte side
 //======================================================================================
+document.getElementById("lastpage").addEventListener('click', function() {
+console.log('hey');
+if (pagenumber <= 1) {
+    } else {
+      pagenumber = pagenumber - 1;
+      document.getElementById('posterSection').innerHTML = ' ';
+      getapi();
+    }
+
+})
 function nextpage() {
   if (pagenumber >= 66) {
   } else {
@@ -173,11 +183,11 @@ function nextpage() {
     getapi();
   }
 }
-function lastpage() {
-  if (pagenumber <= 1) {
-  } else {
-    pagenumber = pagenumber - 1;
-    document.getElementById('posterSection').innerHTML = ' ';
-    getapi();
-  }
-}
+// function lastpage() {
+//   if (pagenumber <= 1) {
+//   } else {
+//     pagenumber = pagenumber - 1;
+//     document.getElementById('posterSection').innerHTML = ' ';
+//     getapi();
+//   }
+// }
