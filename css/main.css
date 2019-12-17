@@ -11,16 +11,22 @@ body {
 #container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 10%  1fr 10%;
+      grid-template-columns: 10%  1fr 10%;
   -ms-grid-rows: ()[1fr];
       grid-template-rows: repeat(1fr);
   grid-gap: 5px;
 }
 
+#container * img {
+  display: block;
+  line-height: 0;
+  max-width: 100%;
+}
+
 #posterSection {
-  -ms-grid-column: 3;
-  grid-column: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto auto;
@@ -30,11 +36,6 @@ body {
   grid-gap: 20px;
   background-color: #262020;
   padding: 20px;
-}
-
-* img {
-  display: block;
-  line-height: 0;
 }
 
 #poster :hover {
@@ -50,8 +51,8 @@ body {
 }
 
 .pageSwitch {
-  -ms-grid-column: 3;
-  grid-column: 3;
+  -ms-grid-column: 2;
+  grid-column: 2;
   text-align: center;
 }
 
