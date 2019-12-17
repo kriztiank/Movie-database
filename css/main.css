@@ -49,7 +49,7 @@ body {
   opacity: 0.5;
 }
 
-#pagenumber {
+.pagenumbertop, .pagenumberbotton {
   display: inline;
 }
 
