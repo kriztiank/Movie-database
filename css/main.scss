@@ -11,7 +11,7 @@ body {
 
 #container {
   display: grid;
-  grid-template-columns: 10%  1fr 10%;
+  grid-template-columns: 5%  1fr 5%;
   grid-template-rows: repeat(1fr);
   grid-gap: 5px;
   * img {
@@ -121,5 +121,8 @@ modal
   #posterSection{
   grid-template-columns: auto;
 padding: 10px;
+* img{
+  width: 100%;
+}
   }
 }
