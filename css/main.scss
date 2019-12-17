@@ -4,8 +4,6 @@
 Base Styles
 **********************************************/
 body {
-  // margin: 0;
-  // padding: 0;
   width: 1200px auto;
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
@@ -36,7 +34,8 @@ body {
   opacity: 0.5;
   cursor: pointer;
 }
-.pagenumbertop, .pagenumberbotton {
+.pagenumbertop,
+.pagenumberbotton {
   display: inline;
 }
 
@@ -44,7 +43,10 @@ body {
   grid-column: 3;
   text-align: center;
 }
-#btn {
+#pageDownTop,
+#pageUpTop,
+#pageDownBotton,
+#pageUpBotton {
   /* Default button styles removed */
   all: unset;
   padding: 1px 1px;
