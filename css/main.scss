@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap");
+
+/*********************************************
+Base Styles
+**********************************************/
+body {
+  background: url(../img/blue-snow.png);
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  * img {
+    display: block;
+    width: 100%;
+  }
+}
+
+/*********************************************
+Landing page - Mikkel
+**********************************************/
+.banner-container {
+  background-color: #5BBA47;
+}
+
+.banner {
+  max-width: 1160px;
+  margin: auto;
+  display: block;
+}
+
+h2 {
+  text-align: center;
+  padding: 2rem;
+  font-size: 20px;
+  color: green;
+}
+
+#posterSection {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+#poster {
+  // center posters on small screens
+  justify-self: center;
+  cursor: pointer;
+
+  &:hover {
+    transition: 200ms ease-in;
+    opacity: 0.5;
+  }
+}
+
+.pagenumbertop,
+.pagenumberbotton {
+  display: inline;
+}
+
+.pageSwitchTop {
+  grid-column: 2;
+  text-align: center;
+  color: green;
+}
+
+.pageSwitchBottom {
+  grid-column: 2;
+  text-align: center;
+  color: green;
+  padding-bottom: 1rem;
+}
+
+#pageDownTop,
+#pageUpTop,
+#pageDownBotton,
+#pageUpBotton {
+  /* Default button styles removed */
+  all: unset;
+  padding: 1px 1px;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/*********************************************
+modal - Kristian
+**********************************************/
+.modal-bg {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content-outher {
+    background: url(../img/blue-snow.png);
+    width: 50vw;
+    height: 85vh;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    border-radius: 4px;
+    padding: 40px;
+    position: relative;
+    animation-name: modalopen;
+    animation-duration: 1s;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .modal-content-inner {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @keyframes modalopen {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 42px;
+      color: #333;
+      transform: rotate(45deg);
+      cursor: pointer;
+
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+}
+
+/*********************************************
+trailer - Kristian
+**********************************************/
+// responsive iframe fix
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*********************************************
+Snow crystal svg animation - Dannie/Kristian
+**********************************************/
+.snow_container {
+  position: absolute;
+  overflow: hidden;
+  display: inline;
+  z-index: -200;
+}
+
+.snow_one {
+  animation: mymove 10s infinite;
+}
+
+.snow_two {
+  animation: mymovetwo 10s infinite;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  visibility: hidden;
+}
+
+.snow_three {
+  animation: mymovethree 12s infinite;
+  animation-delay: 4s;
+  animation-fill-mode: both;
+  visibility: hidden;
+}
+
+.snow_four {
+  animation: mymovefour 12s infinite;
+  animation-delay: 6s;
+  animation-fill-mode: both;
+  visibility: hidden;
+}
+
+.snow_five {
+  animation: mymovefour 12s infinite;
+  animation-delay: 8s;
+  animation-fill-mode: both;
+  visibility: hidden;
+}
+
+.snowflake {
+  overflow: hidden;
+  display: inline;
+  z-index: -200;
+}
+
+@keyframes mymove {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 2200px;
+  }
+
+  from {
+    left: 10vw;
+  }
+
+  to {
+    left: 20vw;
+  }
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mymovetwo {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 2200px;
+  }
+
+  from {
+    left: 20vw;
+  }
+
+  to {
+    left: 30vw;
+  }
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes mymovethree {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 2200px;
+  }
+
+  from {
+    left: 40vw;
+  }
+
+  to {
+    left: 50vw;
+  }
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes mymovefour {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 2200px;
+  }
+
+  from {
+    left: 60vw;
+  }
+
+  to {
+    left: 70vw;
+  }
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes mymovefive {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 2200px;
+  }
+
+  from {
+    left: 80vw;
+  }
+
+  to {
+    left: 90vw;
+  }
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}
+
+/*********************************************
+Media queries - Mikkel
+**********************************************/
+@media only screen and (max-width: 800px) {
+  #posterSection {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #posterSection {
+    grid-template-columns: auto;
+    padding: 5px;
+  }
+}

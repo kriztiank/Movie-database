@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Holiday Movies</title>
+    <link rel="icon" href="img/favicon_movie.png" type="image/png" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="banner-container">
+      <img class="banner" src="./svg/banner.svg" alt="banner" />
+    </div>
+
+    <div class="snow_container snow_one">
+      <img class="snowflake" src="./svg/snowflake.svg" alt="snowflake" />
+    </div>
+
+    <div class="snow_container snow_two">
+      <img class="snowflake" src="./svg/snowflake.svg" alt="snowflake" />
+    </div>
+
+    <div class="snow_container snow_three">
+      <img class="snowflake" src="./svg/snowflake.svg" alt="snowflake" />
+    </div>
+
+    <div class="snow_container snow_four">
+      <img class="snowflake" src="./svg/snowflake.svg" alt="snowflake" />
+    </div>
+
+    <div class="snow_container snow_five">
+      <img class="snowflake" src="./svg/snowflake.svg" alt="snowflake" />
+    </div>
+
+    <div id="container">
+      <h2>Enjoy the finest holiday movies the world has to offer</h2>
+
+      <div class="pageSwitchTop">
+        <button id="pageDownTop"><span>&#9668;</span></button>
+        <div class="pagenumbertop"></div>
+        <button id="pageUpTop"><span>&#9658;</span></button>
+      </div>
+
+      <section id="posterSection"></section>
+
+      <div class="pageSwitchBottom">
+        <button id="pageDownBotton"><span>&#9668;</span></button>
+        <div class="pagenumberbotton"></div>
+        <button id="pageUpBotton"><span>&#9658;</span></button>
+      </div>
+    </div>
+
+    <div class="modal-bg">
+      <div class="modal-content-outher">
+        <div class="close">+</div>
+        <div class="modal-content-inner">
+          <!-- udskriver alt tekst i diverse tags og tildeler dem en class -->
+          <section id="title"></section>
+          <section id="description"></section>
+          <!-- udskriver trailer i et div tag og tildeler den en trailer class -->
+          <section id="trailer"></section>
+          <section id="year"></section>
+          <section id="runtime"></section>
+          <section id="directors"></section>
+          <section id="producers"></section>
+          <section id="actors"></section>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
